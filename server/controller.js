@@ -59,4 +59,7 @@ module.exports = {
     // console.log(anagrams);
     res.status(200);
   },
+  getAnagrams: (req, res) => {
+    res.status(200).send(anagrams);
+  },
 };

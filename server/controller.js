@@ -10,10 +10,18 @@ var sevens = [];
 
 module.exports = {
   solver: (req, res) => {
-    const input = req.body;
+    twos = [];
+    threes = [];
+    fours = [];
+    fives = [];
+    sixes = [];
+    sevens = [];
+
+    const { input } = req.body;
+    console.log("******Solving for: " + input);
 
     for (w = 0; w < dictionary.length; w++) {
-      var letters = input.split('');
+      var letters = input.toLowerCase().split('');
       var word = dictionary[w].split('');
 
       for (i = 0; i < letters.length; i++) {
@@ -56,10 +64,12 @@ module.exports = {
     anagrams['fives'] = fives;
     anagrams['sixes'] = sixes;
     anagrams['sevens'] = sevens;
-    // console.log(anagrams);
-    res.status(200);
+
+    // console.log(anagrams.twos);
+    res.status(200).send(anagrams);
   },
   getAnagrams: (req, res) => {
+    // console.log("*********** Retreiving: " + JSON.stringify(anagrams));
     res.status(200).send(anagrams);
   },
 };

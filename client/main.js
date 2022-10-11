@@ -6,6 +6,7 @@ const fours = document.getElementById('Fours');
 const fives = document.getElementById('Fives');
 const sixes = document.getElementById('Sixes');
 const sevens = document.getElementById('Sevens');
+const main = document.getElementById('main');
 
 const getAnagrams = () =>
   axios.get(`http://localhost:4004/api/anagrams`).then((res) => {
@@ -26,6 +27,7 @@ const solve = (e) => {
       getAnagrams();
     }
   });
+  main.classList.remove('hidden');
 };
 
 button.addEventListener('click', solve);

@@ -63,3 +63,7 @@ p {
     color: black;
     background-color: #D9D9D9;
 }
+
+.hidden {
+    visibility: hidden;
+}

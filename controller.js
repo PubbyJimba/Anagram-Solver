@@ -18,7 +18,7 @@ module.exports = {
     sevens = [];
 
     const { input } = req.body;
-    console.log("******Solving for: " + input);
+    // console.log("******Solving for: " + input);
 
     for (w = 0; w < dictionary.length; w++) {
       var letters = input.toLowerCase().split('');

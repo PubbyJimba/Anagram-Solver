@@ -25,4 +25,6 @@ app.get('/js', (req, res) => {
 app.get("/api/anagrams", getAnagrams)
 app.post("/api/solver", solver);
 
-app.listen(4004, () => console.log("Listening on port 4004"));
+const port = process.env.PORT || 3000
+
+app.listen(port, () => console.log(`Listening on port ${port}`));

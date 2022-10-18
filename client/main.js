@@ -9,7 +9,7 @@ const sevens = document.getElementById('Sevens');
 const main = document.getElementById('main');
 
 const getAnagrams = () =>
-  axios.get(`http://localhost:4004/api/anagrams`).then((res) => {
+  axios.get(`/api/anagrams`).then((res) => {
     twos.innerHTML = res.data.twos.join(', ');
     threes.innerHTML = res.data.threes.join(', ');
     fours.innerHTML = res.data.fours.join(', ');
@@ -22,7 +22,7 @@ const solve = (e) => {
   e.preventDefault();
   const input = letters.value;
   const body = { input };
-  axios.post(`http://localhost:4004/api/solver`, body).then((res) => {
+  axios.post(`/api/solver`, body).then((res) => {
     if (res.status == 200) {
       getAnagrams();
     }

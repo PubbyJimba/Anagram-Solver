@@ -11,15 +11,15 @@ app.use(cors());
 //Middleware
 
 app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, "Client", "index.html"))
+    res.sendFile(path.join(__dirname, "client", "index.html"))
 });
 
 app.get('/css', (req, res) => {
-    res.sendFile(path.join(__dirname, "Client", "stylesheet.css"));
+    res.sendFile(path.join(__dirname, "client", "stylesheet.css"));
 });
 
 app.get('/js', (req, res) => {
-    res.sendFile(path.join(__dirname, "Client", "main.js"));
+    res.sendFile(path.join(__dirname, "client", "main.js"));
 });
 
 app.get("/api/anagrams", getAnagrams)
